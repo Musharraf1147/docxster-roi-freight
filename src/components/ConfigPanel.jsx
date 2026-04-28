@@ -62,6 +62,7 @@ export default function ConfigPanel({ inputs, onChange }) {
             { value: 0.10, label: '10%' },
             { value: 0.15, label: '15%' },
             { value: 0.20, label: '20%' },
+            { value: 0.25, label: '25%' },
           ]}
         />
         <Slider
@@ -85,11 +86,21 @@ export default function ConfigPanel({ inputs, onChange }) {
             { value: 0.20, label: '20%' },
             { value: 0.30, label: '30%' },
             { value: 0.50, label: '50%' },
+            { value: 1.00, label: '100%' },
           ]}
         />
       </Section>
 
-      <Section title="Document handling & disputes">
+      <Section title="Document processing labor">
+        <Slider
+          label="Documents per load"
+          helper="Rate confirmation, BOL, POD, carrier invoice, accessorials, etc."
+          value={inputs.docsPerLoad}
+          min={0}
+          max={8}
+          step={1}
+          onChange={set('docsPerLoad')}
+        />
         <Slider
           label="Time spent on docs per load"
           helper="Manual matching of rate con, BOL, POD, and carrier invoice"
@@ -101,6 +112,15 @@ export default function ConfigPanel({ inputs, onChange }) {
           formatValue={(v) => `${v} min`}
         />
         <Slider
+          label="Ops staff FTEs on doc processing"
+          helper="Headcount dedicated to document handling"
+          value={inputs.opsStaffFTEs}
+          min={0}
+          max={50}
+          step={1}
+          onChange={set('opsStaffFTEs')}
+        />
+        <Slider
           label="Fully-loaded hourly cost"
           helper="Salary + benefits + overhead, per ops team hour"
           value={inputs.hourlyRate}
@@ -109,6 +129,19 @@ export default function ConfigPanel({ inputs, onChange }) {
           step={1}
           onChange={set('hourlyRate')}
           formatValue={(v) => `$${v}`}
+        />
+      </Section>
+
+      <Section title="POD collection and disputes">
+        <Slider
+          label="POD collection lag"
+          helper="Days between delivery and confirmed POD receipt"
+          value={inputs.podLagDays}
+          min={0}
+          max={14}
+          step={1}
+          onChange={set('podLagDays')}
+          formatValue={(v) => `${v} ${v === 1 ? 'day' : 'days'}`}
         />
         <TabGroup
           label="Dispute rate"
@@ -120,6 +153,8 @@ export default function ConfigPanel({ inputs, onChange }) {
             { value: 0.10, label: '10%' },
             { value: 0.15, label: '15%' },
             { value: 0.20, label: '20%' },
+            { value: 0.25, label: '25%' },
+            { value: 0.30, label: '30%' },
           ]}
         />
         <Slider
@@ -130,19 +165,6 @@ export default function ConfigPanel({ inputs, onChange }) {
           max={12}
           step={0.5}
           onChange={set('disputeHours')}
-        />
-        <TabGroup
-          label="POD collection lag"
-          helper="Days between delivery and confirmed POD receipt"
-          value={inputs.podLagDays}
-          onChange={set('podLagDays')}
-          options={[
-            { value: 1, label: '1 day' },
-            { value: 2, label: '2 days' },
-            { value: 3, label: '3 days' },
-            { value: 5, label: '5 days' },
-            { value: 7, label: '7 days' },
-          ]}
         />
       </Section>
 

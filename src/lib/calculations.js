@@ -5,11 +5,13 @@ export const DEFAULTS = {
   overbillRate:       0.10,
   overchargeAmount:   120,
   manuallyCaughtRate: 0.20,
+  docsPerLoad:        4,
   docTimeMinutes:     18,
+  opsStaffFTEs:       5,
   hourlyRate:         28,
+  podLagDays:         3,
   disputeRate:        0.10,
   disputeHours:       3.5,
-  podLagDays:         3,
   subscriptionCost:   1500,
 }
 
