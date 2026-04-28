@@ -57,9 +57,9 @@ function OperationsView({ results, inputs }) {
         />
         <BreakdownCard
           tag="cashflow"
-          label="Cash freed up by faster POD collection"
+          label="Working capital freed from POD lag reduction"
           value={formatCurrency(results.cashFlowFreed)}
-          footnote="One-time working capital, not recurring"
+          footnote="Billings that can go out faster when POD collection is automated"
         />
       </BreakdownGrid>
     </>
@@ -75,8 +75,9 @@ function FinanceView({ results, inputs }) {
           value={formatCurrency(results.totalOverbilling * 12)}
         />
         <MetricCard
-          label="Working capital tied up in POD"
+          label="Working capital freed from POD lag reduction"
           value={formatCurrency(results.cashFlowFreed)}
+          caption="Billings that can go out faster when POD collection is automated"
         />
         <MetricCard
           emphasized
