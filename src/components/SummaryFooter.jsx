@@ -37,7 +37,7 @@ export default function SummaryFooter({
               style={{ width: `${fillPercent}%` }}
             />
           </div>
-          <span className="text-sm tabular-nums text-text-strong font-mono whitespace-nowrap">
+          <span className="text-sm tabular-nums text-text-strong whitespace-nowrap">
             {roiMultiplier === null ? '—' : `${roiMultiplier.toFixed(1)}x`}
           </span>
         </div>

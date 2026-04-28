@@ -19,7 +19,7 @@ export default function BreakdownCard({ tag, label, value, footnote }) {
         {tag}
       </span>
       <span className="text-xs text-text-weak">{label}</span>
-      <span className="text-base font-semibold font-mono tabular-nums text-text-strong">
+      <span className="text-base font-semibold tabular-nums text-text-strong">
         {value}
       </span>
       {footnote && (

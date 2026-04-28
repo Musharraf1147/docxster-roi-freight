@@ -14,7 +14,7 @@ export default function Slider({
     <div className="flex flex-col gap-sm">
       <div className="flex items-center justify-between">
         <span className="text-sm text-text-weak">{label}</span>
-        <span className="font-mono text-xs tabular-nums text-text-strong bg-bg-primary border border-stroke-weak rounded-md px-md py-2xs">
+        <span className="text-xs tabular-nums text-text-strong bg-bg-primary border border-stroke-weak rounded-md px-md py-2xs">
           {formatValue(value)}
         </span>
       </div>
