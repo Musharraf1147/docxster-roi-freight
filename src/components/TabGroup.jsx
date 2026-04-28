@@ -11,12 +11,17 @@ export default function TabGroup({ label, helper, options, value, onChange }) {
 
   return (
     <div className="flex flex-col gap-sm">
-      <span id={labelId} className="text-sm text-text-weak">
-        {label}
-      </span>
+      {label && (
+        <span id={labelId} className="text-sm text-text-weak">
+          {label}
+        </span>
+      )}
 
       <Tabs value={value} onValueChange={onChange}>
-        <TabsList aria-labelledby={labelId} className="w-full">
+        <TabsList
+          aria-labelledby={label ? labelId : undefined}
+          className="w-full"
+        >
           {options.map((opt) => (
             <TabsTab key={String(opt.value)} value={opt.value}>
               {opt.label}

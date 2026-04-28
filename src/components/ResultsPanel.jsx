@@ -1,0 +1,144 @@
+import { useState } from 'react'
+
+import TabGroup from './TabGroup'
+import MetricCard from './MetricCard'
+import BreakdownCard from './BreakdownCard'
+import SummaryFooter from './SummaryFooter'
+import AssumptionsDisclosure from './AssumptionsDisclosure'
+import { formatCurrency, formatHours } from '@/lib/calculations'
+
+function HeroRow({ children }) {
+  return <div className="grid grid-cols-3 gap-lg">{children}</div>
+}
+
+function BreakdownGrid({ children }) {
+  return <div className="grid grid-cols-2 gap-lg">{children}</div>
+}
+
+function OperationsView({ results, inputs }) {
+  const netImpact = results.monthlyROI - inputs.subscriptionCost
+
+  return (
+    <>
+      <HeroRow>
+        <MetricCard
+          label="Margin you're losing today"
+          value={formatCurrency(results.overbillRecovered)}
+          caption="Monthly carrier overbilling that slips through"
+        />
+        <MetricCard
+          label="Hours your team gets back"
+          value={formatHours(results.hoursReturned)}
+          caption="Document handling + dispute time saved"
+        />
+        <MetricCard
+          emphasized
+          label="Net monthly impact"
+          value={formatCurrency(netImpact)}
+          caption="After Docxster subscription"
+        />
+      </HeroRow>
+
+      <BreakdownGrid>
+        <BreakdownCard
+          tag="margin"
+          label="Overbilling Docxster catches that you currently miss"
+          value={formatCurrency(results.overbillRecovered)}
+        />
+        <BreakdownCard
+          tag="labor"
+          label="Time saved on doc matching"
+          value={formatCurrency(results.docLaborSaved)}
+        />
+        <BreakdownCard
+          tag="disputes"
+          label="Time saved on dispute resolution"
+          value={formatCurrency(results.disputeTimeSaved)}
+        />
+        <BreakdownCard
+          tag="cashflow"
+          label="Cash freed up by faster POD collection"
+          value={formatCurrency(results.cashFlowFreed)}
+          footnote="One-time working capital, not recurring"
+        />
+      </BreakdownGrid>
+    </>
+  )
+}
+
+function FinanceView({ results, inputs }) {
+  return (
+    <>
+      <HeroRow>
+        <MetricCard
+          label="Annual leakage you'd recover"
+          value={formatCurrency(results.totalOverbilling * 12)}
+        />
+        <MetricCard
+          label="Working capital tied up in POD"
+          value={formatCurrency(results.cashFlowFreed)}
+        />
+        <MetricCard
+          emphasized
+          label="Net annual ROI"
+          value={formatCurrency(results.annualNet)}
+        />
+      </HeroRow>
+
+      <BreakdownGrid>
+        <BreakdownCard
+          tag="margin"
+          label="Overbilling recovered per year"
+          value={formatCurrency(results.overbillRecovered * 12)}
+        />
+        <BreakdownCard
+          tag="cashflow"
+          label="Annual opportunity cost of POD lag"
+          value={formatCurrency(results.podOpportunityCost * 12)}
+        />
+        <BreakdownCard
+          tag="disputes"
+          label="Annual dispute overhead eliminated"
+          value={formatCurrency(results.disputeTimeSaved * 12)}
+        />
+        <BreakdownCard
+          tag="labor"
+          label="Annual document labor recovered"
+          value={formatCurrency(results.docLaborSaved * 12)}
+        />
+      </BreakdownGrid>
+    </>
+  )
+}
+
+export default function ResultsPanel({ results, inputs }) {
+  const [view, setView] = useState('operations')
+
+  return (
+    <div className="bg-bg-primary border border-stroke-weak rounded-lg p-2xl shadow-xs sticky top-2xl self-start flex flex-col gap-xl">
+      <TabGroup
+        value={view}
+        onChange={setView}
+        options={[
+          { value: 'operations', label: 'Operations view' },
+          { value: 'finance', label: 'Finance view' },
+        ]}
+      />
+
+      {view === 'operations' ? (
+        <OperationsView results={results} inputs={inputs} />
+      ) : (
+        <FinanceView results={results} inputs={inputs} />
+      )}
+
+      <SummaryFooter
+        paybackWeeks={results.paybackWeeks}
+        roiMultiplier={results.roiMultiplier}
+        monthlyROI={results.monthlyROI}
+        subscriptionCost={inputs.subscriptionCost}
+      />
+
+      <AssumptionsDisclosure />
+    </div>
+  )
+}
