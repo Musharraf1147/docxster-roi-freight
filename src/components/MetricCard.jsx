@@ -22,11 +22,11 @@ export default function MetricCard({ label, value, caption, emphasized = false }
         key={String(value)}
         animate={{ scale: [1, 1.02, 1] }}
         transition={{ duration: 0.3, times: [0, 0.5, 1] }}
-        className="origin-left inline-block text-2xl font-semibold tabular-nums text-text-strong"
+        className="origin-left inline-block text-2xl font-semibold tabular-nums text-text-strong whitespace-nowrap"
       >
         {value}
       </motion.span>
-      {caption && <span className="text-xs text-text-weaker">{caption}</span>}
+      <span className="text-xs text-text-weaker">{caption || ' '}</span>
     </div>
   )
 }
