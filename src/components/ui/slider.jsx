@@ -12,15 +12,14 @@ const Slider = React.forwardRef(({ className, ...props }, ref) => (
     )}
     {...props}
   >
-    <SliderPrimitive.Track className="relative grow h-1 overflow-hidden rounded-full bg-bg-subtle">
+    <SliderPrimitive.Track className="relative grow h-4 overflow-hidden rounded-sm bg-bg-subtle">
       <SliderPrimitive.Range className="absolute h-full bg-icon-strong" />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
       className={cn(
-        'block h-4 w-4 rounded-full border-[1.5px] border-icon-strong bg-bg-primary shadow-xs',
-        'transition-all duration-150 ease-out-expo',
-        'hover:h-[18px] hover:w-[18px] hover:shadow-sm',
-        'active:h-5 active:w-5 active:shadow-md',
+        'block w-2 h-6 rounded-sm border-[1.5px] border-icon-strong bg-bg-primary shadow-xs',
+        'transition-shadow duration-150 ease-out-expo',
+        'hover:shadow-sm active:shadow-md',
         'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-icon-strong/30',
         'data-[disabled]:cursor-not-allowed',
       )}
