@@ -53,7 +53,7 @@ export const spacing = {
 
 export const fonts = {
   sans: 'Inter, system-ui, sans-serif',
-  mono: '"JetBrains Mono", monospace',
+  mono: '"Source Code Pro", monospace',
 }
 
 export const easing = {
