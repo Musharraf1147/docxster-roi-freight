@@ -31,13 +31,10 @@ export default function SummaryFooter({
           <span className="text-sm text-text-weak whitespace-nowrap">
             ROI multiplier
           </span>
-          <div className="flex-1 h-1.5 bg-bg-subtle rounded-full overflow-hidden">
+          <div className="relative flex-1 h-4 overflow-hidden rounded-sm bg-bg-subtle">
             <div
-              className="h-full rounded-full transition-all duration-300 ease-out-expo"
-              style={{
-                width: `${fillPercent}%`,
-                background: 'linear-gradient(0deg, #3F3F3F, #1E1E1E)',
-              }}
+              className="absolute inset-y-0 left-0 bg-icon-weak transition-all duration-300 ease-out-expo"
+              style={{ width: `${fillPercent}%` }}
             />
           </div>
           <span className="text-sm tabular-nums text-text-strong font-mono whitespace-nowrap">
