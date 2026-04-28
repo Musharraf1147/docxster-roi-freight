@@ -28,7 +28,7 @@ const Slider = React.forwardRef(({ className, ...props }, ref) => (
           'transition-all duration-150 ease-out-expo',
           'group-hover:w-2.5 group-hover:h-7 group-hover:shadow-sm',
           'group-active:w-3 group-active:h-8 group-active:shadow-md',
-          'group-focus-visible:outline group-focus-visible:outline-[3px] group-focus-visible:outline-icon-weak/30',
+          'group-focus-visible:outline-2 group-focus-visible:outline-stroke-strong group-focus-visible:outline-offset-2',
         )}
       />
     </SliderPrimitive.Thumb>

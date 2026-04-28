@@ -116,7 +116,7 @@ export default function ResultsPanel({ results, inputs }) {
   const [view, setView] = useState('operations')
 
   return (
-    <div className="sticky top-2xl self-start bg-bg-page rounded-xl p-3">
+    <div className="sticky top-20 self-start bg-bg-page rounded-xl p-3">
       <div className="bg-bg-primary border border-stroke-weak rounded-lg p-2xl shadow-lg flex flex-col gap-xl">
         <TabGroup
         value={view}

@@ -20,15 +20,15 @@ export default function SummaryFooter({
   return (
     <div className="bg-bg-primary border border-stroke-weak rounded-lg p-xl shadow-xs flex flex-col gap-md">
       <div className="flex items-center justify-between">
-        <span className="text-sm text-text-weak">Payback period</span>
-        <span className="text-base font-semibold text-text-strong">
+        <span className="text-sm tracking-[-0.4px] text-text-weak">Payback period</span>
+        <span className="text-base tracking-[-0.4px] font-semibold text-text-strong">
           {paybackText}
         </span>
       </div>
 
       <div className="flex flex-col gap-sm">
         <div className="flex items-center gap-md">
-          <span className="text-sm text-text-weak whitespace-nowrap">
+          <span className="text-sm tracking-[-0.4px] text-text-weak whitespace-nowrap">
             ROI multiplier
           </span>
           <div className="relative flex-1 h-4 overflow-hidden rounded-sm bg-bg-page">
@@ -37,7 +37,7 @@ export default function SummaryFooter({
               style={{ width: `${fillPercent}%` }}
             />
           </div>
-          <span className="text-sm tabular-nums text-text-strong whitespace-nowrap">
+          <span className="text-sm tracking-[-0.4px] tabular-nums text-text-strong whitespace-nowrap">
             {roiMultiplier === null ? '—' : `${roiMultiplier.toFixed(1)}x`}
           </span>
         </div>

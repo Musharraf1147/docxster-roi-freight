@@ -67,6 +67,11 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ── Tabular numerics on by default ─────────────────── */
+body {
+  font-feature-settings: "tnum";
+}
+
 /* ── Mono font is always uppercase ─────────────────── */
 .font-mono {
   text-transform: uppercase;

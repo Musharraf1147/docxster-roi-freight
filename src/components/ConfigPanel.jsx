@@ -5,7 +5,7 @@ import { formatCurrency } from '@/lib/calculations'
 function Section({ title, children }) {
   return (
     <div className="flex flex-col gap-xl py-2xl">
-      <h3 className="text-xs font-semibold text-text-weaker uppercase tracking-wider">
+      <h3 className="text-[20px] font-semibold leading-[150%] tracking-[-0.528px] text-text-strong">
         {title}
       </h3>
       {children}

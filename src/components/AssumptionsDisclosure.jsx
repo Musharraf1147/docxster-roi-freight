@@ -1,7 +1,7 @@
 export default function AssumptionsDisclosure() {
   return (
     <details className="group">
-      <summary className="text-xs text-text-weak cursor-pointer flex items-center gap-xs list-none [&::-webkit-details-marker]:hidden">
+      <summary className="text-xs text-text-weak cursor-pointer flex items-center gap-xs list-none [&::-webkit-details-marker]:hidden focus-visible:outline-2 focus-visible:outline-stroke-strong focus-visible:outline-offset-2 rounded-sm">
         <svg
           className="w-3 h-3 transition-transform duration-150 group-open:rotate-90"
           viewBox="0 0 12 12"

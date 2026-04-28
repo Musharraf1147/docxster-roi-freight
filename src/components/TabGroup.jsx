@@ -12,7 +12,10 @@ export default function TabGroup({ label, helper, options, value, onChange }) {
   return (
     <div className="flex flex-col gap-sm">
       {label && (
-        <span id={labelId} className="text-sm text-text-weak">
+        <span
+          id={labelId}
+          className="text-medium tracking-[-0.4px] text-text-strong font-semibold"
+        >
           {label}
         </span>
       )}
@@ -30,7 +33,9 @@ export default function TabGroup({ label, helper, options, value, onChange }) {
         </TabsList>
       </Tabs>
 
-      {helper && <span className="text-xs text-text-weaker">{helper}</span>}
+      {helper && (
+        <span className="text-sm tracking-[-0.4px] text-text-weaker">{helper}</span>
+      )}
     </div>
   )
 }

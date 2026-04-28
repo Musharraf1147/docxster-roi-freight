@@ -13,7 +13,9 @@ export default function Slider({
   return (
     <div className="flex flex-col gap-sm">
       <div className="flex items-center justify-between">
-        <span className="text-sm text-text-weak">{label}</span>
+        <span className="text-medium tracking-[-0.4px] text-text-strong font-semibold ">
+          {label}
+        </span>
         <span className="text-xs tabular-nums text-text-strong bg-bg-primary border border-stroke-weak rounded-md px-md py-2xs">
           {formatValue(value)}
         </span>
@@ -28,7 +30,9 @@ export default function Slider({
         aria-label={label}
       />
 
-      {helper && <span className="text-xs text-text-weaker">{helper}</span>}
+      {helper && (
+        <span className="text-sm tracking-[-0.4px] text-text-weaker">{helper}</span>
+      )}
     </div>
   )
 }

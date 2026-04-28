@@ -105,7 +105,7 @@ const TabsTab = React.forwardRef(
         className={cn(
           'relative flex-1 px-lg py-sm text-xs font-semibold rounded-sm transition-colors duration-150 ease-out-expo',
           isActive ? 'text-text-strong' : 'text-text-weak hover:text-text-strong',
-          'focus-visible:outline focus-visible:outline-2 focus-visible:outline-icon-strong/30',
+          'focus-visible:outline-2 focus-visible:outline-stroke-strong focus-visible:outline-offset-2',
           className,
         )}
         {...props}
