@@ -13,17 +13,25 @@ const Slider = React.forwardRef(({ className, ...props }, ref) => (
     {...props}
   >
     <SliderPrimitive.Track className="relative grow h-4 overflow-hidden rounded-sm bg-bg-subtle">
-      <SliderPrimitive.Range className="absolute h-full bg-icon-strong" />
+      <SliderPrimitive.Range className="absolute h-full bg-icon-weak" />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
       className={cn(
-        'block w-2 h-6 rounded-sm border-[1.5px] border-icon-strong bg-bg-primary shadow-xs',
-        'transition-shadow duration-150 ease-out-expo',
-        'hover:shadow-sm active:shadow-md',
-        'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-icon-strong/30',
+        'group flex items-center justify-center',
+        'w-4 h-8 bg-bg-primary outline-none',
         'data-[disabled]:cursor-not-allowed',
       )}
-    />
+    >
+      <span
+        className={cn(
+          'block w-2 h-6 rounded-sm border-[1.5px] border-icon-weak bg-bg-primary shadow-xs',
+          'transition-all duration-150 ease-out-expo',
+          'group-hover:w-2.5 group-hover:h-7 group-hover:shadow-sm',
+          'group-active:w-3 group-active:h-8 group-active:shadow-md',
+          'group-focus-visible:outline group-focus-visible:outline-[3px] group-focus-visible:outline-icon-weak/30',
+        )}
+      />
+    </SliderPrimitive.Thumb>
   </SliderPrimitive.Root>
 ))
 Slider.displayName = SliderPrimitive.Root.displayName
