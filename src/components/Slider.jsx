@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { Slider as SliderPrimitive } from '@/components/ui/slider'
 
 export default function Slider({
   label,
@@ -10,44 +10,22 @@ export default function Slider({
   onChange,
   formatValue = (v) => v.toString(),
 }) {
-  const id = useId()
-
-  function handleKeyDown(e) {
-    if (e.key === 'PageUp') {
-      e.preventDefault()
-      onChange(Math.min(max, value + step * 10))
-    } else if (e.key === 'PageDown') {
-      e.preventDefault()
-      onChange(Math.max(min, value - step * 10))
-    }
-  }
-
   return (
     <div className="flex flex-col gap-sm">
       <div className="flex items-center justify-between">
-        <label htmlFor={id} className="text-sm text-text-weak">
-          {label}
-        </label>
+        <span className="text-sm text-text-weak">{label}</span>
         <span className="font-mono text-xs tabular-nums text-text-strong bg-bg-primary border border-stroke-weak rounded-md px-md py-2xs">
           {formatValue(value)}
         </span>
       </div>
 
-      <input
-        id={id}
-        type="range"
-        role="slider"
-        className="roi-slider"
+      <SliderPrimitive
+        value={[value]}
         min={min}
         max={max}
         step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        onKeyDown={handleKeyDown}
+        onValueChange={(v) => onChange(v[0])}
         aria-label={label}
-        aria-valuemin={min}
-        aria-valuemax={max}
-        aria-valuenow={value}
       />
 
       {helper && <span className="text-xs text-text-weaker">{helper}</span>}
