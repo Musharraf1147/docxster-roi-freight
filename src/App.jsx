@@ -13,7 +13,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-bg-page font-sans">
+    <div className="min-h-screen bg-bg-primary font-sans">
       <div className="max-w-[1200px] mx-auto p-2xl">
         <h1 className="text-2xl font-semibold text-text-strong mb-2xl">
           Freight ROI Calculator

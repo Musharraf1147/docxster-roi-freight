@@ -4,13 +4,11 @@ import { formatCurrency } from '@/lib/calculations'
 
 function Section({ title, children }) {
   return (
-    <div className="bg-bg-primary border border-stroke-weak rounded-lg p-2xl shadow-xs">
-      <div className="flex flex-col gap-xl">
-        <h3 className="text-xs font-semibold text-text-weaker uppercase tracking-wider">
-          {title}
-        </h3>
-        {children}
-      </div>
+    <div className="flex flex-col gap-xl py-2xl">
+      <h3 className="text-xs font-semibold text-text-weaker uppercase tracking-wider">
+        {title}
+      </h3>
+      {children}
     </div>
   )
 }
@@ -19,7 +17,7 @@ export default function ConfigPanel({ inputs, onChange }) {
   const set = (key) => (value) => onChange(key, value)
 
   return (
-    <div className="flex flex-col gap-xl">
+    <div className="flex flex-col divide-y divide-dashed divide-stroke-weak">
       <Section title="Your operation">
         <Slider
           label="Monthly load volume"

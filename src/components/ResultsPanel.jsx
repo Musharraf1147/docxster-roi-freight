@@ -115,8 +115,9 @@ export default function ResultsPanel({ results, inputs }) {
   const [view, setView] = useState('operations')
 
   return (
-    <div className="bg-bg-primary border border-stroke-weak rounded-lg p-2xl shadow-xs sticky top-2xl self-start flex flex-col gap-xl">
-      <TabGroup
+    <div className="sticky top-2xl self-start bg-bg-page rounded-xl p-3">
+      <div className="bg-bg-primary border border-stroke-weak rounded-lg p-2xl shadow-lg flex flex-col gap-xl">
+        <TabGroup
         value={view}
         onChange={setView}
         options={[
@@ -138,7 +139,8 @@ export default function ResultsPanel({ results, inputs }) {
         subscriptionCost={inputs.subscriptionCost}
       />
 
-      <AssumptionsDisclosure />
+        <AssumptionsDisclosure />
+      </div>
     </div>
   )
 }
