@@ -117,7 +117,13 @@ export default function ResultsPanel({ results, inputs }) {
 
   return (
     <div className="sticky top-20 self-start bg-bg-page rounded-xl p-3">
-      <div className="bg-bg-primary border border-stroke-weak rounded-lg p-2xl shadow-lg flex flex-col gap-xl">
+      <div
+        className="bg-bg-primary border border-stroke-weak rounded-lg p-2xl flex flex-col gap-xl"
+        style={{
+          boxShadow:
+            '-49px 60px 22px 0 rgba(0,0,0,0.00), -31px 38px 20px 0 rgba(0,0,0,0.01), -18px 21px 17px 0 rgba(0,0,0,0.03), -8px 10px 12px 0 rgba(0,0,0,0.06), -2px 2px 7px 0 rgba(0,0,0,0.07)',
+        }}
+      >
         <TabGroup
         value={view}
         onChange={setView}
