@@ -82,6 +82,7 @@ function FinanceView({ results, inputs }) {
           emphasized
           label="Net annual ROI"
           value={formatCurrency(results.annualNet)}
+          caption="After Docxster subscription"
         />
       </HeroRow>
 
