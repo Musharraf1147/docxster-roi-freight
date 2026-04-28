@@ -18,14 +18,17 @@ const Slider = React.forwardRef(({ className, ...props }, ref) => (
     <SliderPrimitive.Thumb
       className={cn(
         'group flex items-center justify-center',
-        'w-7 h-7 bg-bg-primary outline-none',
+        'w-4 h-8 bg-bg-primary outline-none',
         'data-[disabled]:cursor-not-allowed',
       )}
     >
       <span
         className={cn(
-          'block h-5 w-5 rounded-full border-2 border-icon-weak bg-bg-primary transition-colors',
-          'group-focus-visible:outline group-focus-visible:outline-[3px] group-focus-visible:outline-icon-weak/40',
+          'block w-2 h-6 rounded-sm border-[1.5px] border-icon-weak bg-bg-primary shadow-xs',
+          'transition-all duration-150 ease-out-expo',
+          'group-hover:w-2.5 group-hover:h-7 group-hover:shadow-sm',
+          'group-active:w-3 group-active:h-8 group-active:shadow-md',
+          'group-focus-visible:outline group-focus-visible:outline-[3px] group-focus-visible:outline-icon-weak/30',
         )}
       />
     </SliderPrimitive.Thumb>
