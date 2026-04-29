@@ -81,6 +81,24 @@ body {
   text-transform: uppercase;
 }
 
+/* ── Dashed section dividers ────────────────────────── */
+.section-dashed-divider > * + * {
+  position: relative;
+}
+.section-dashed-divider > * + *::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-stroke-weak) 0 4px,
+    transparent 4px 8px
+  );
+}
+
 /* ── Gradient button utilities ──────────────────────── */
 .bg-primary-btn {
   background: linear-gradient(0deg, #3F3F3F 0%, #1E1E1E 100%);
