@@ -77,7 +77,7 @@ const TabsList = React.forwardRef(({ className, children, ...props }, ref) => {
         role="tablist"
         onKeyDown={handleKeyDown}
         className={cn(
-          'inline-flex items-center gap-xs p-xs bg-bg-page rounded-md',
+          'inline-flex items-center gap-xs p-xs bg-bg-page border border-stroke-weak rounded-[10px]',
           className,
         )}
         {...props}
@@ -103,8 +103,8 @@ const TabsTab = React.forwardRef(
         tabIndex={isActive ? 0 : -1}
         onClick={() => setValue(value)}
         className={cn(
-          'relative flex-1 px-lg py-sm text-xs font-semibold rounded-sm transition-colors duration-150 ease-out-expo',
-          isActive ? 'text-text-strong' : 'text-text-weak hover:text-text-strong',
+          'relative flex-1 px-lg py-sm text-sm tracking-[-0.2px] rounded-md transition-colors duration-150 ease-out-expo',
+          isActive ? 'text-text-strong font-semibold' : 'text-text-weak font-medium hover:text-text-strong',
           'focus-visible:outline-2 focus-visible:outline-stroke-strong focus-visible:outline-offset-2',
           className,
         )}
@@ -114,7 +114,7 @@ const TabsTab = React.forwardRef(
           <motion.span
             layoutId="tabs-indicator"
             aria-hidden="true"
-            className="absolute inset-0 z-0 bg-bg-primary border border-stroke-weak shadow-xs rounded-sm"
+            className="absolute inset-0 z-0 bg-bg-primary border border-stroke-weak shadow-xs rounded-md"
             transition={{ type: 'spring', duration: 0.4, bounce: 0.15 }}
           />
         )}

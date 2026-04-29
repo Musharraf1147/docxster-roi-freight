@@ -8,25 +8,37 @@ export default function MetricCard({ label, value, caption, emphasized = false }
       className={cn(
         'min-w-0 rounded-xl p-xl shadow-xs flex flex-col gap-sm',
         emphasized
-          ? 'border border-stroke-strong'
+          ? 'bg-primary-btn border border-stroke-strong'
           : 'bg-bg-primary border border-stroke-weak',
       )}
-      style={
-        emphasized
-          ? { background: 'linear-gradient(180deg, #FFFFFF, #F5F5F5)' }
-          : undefined
-      }
     >
-      <span className="text-sm font-semibold text-text-weak">{label}</span>
       <motion.span
         key={String(value)}
         animate={{ scale: [1, 1.02, 1] }}
         transition={{ duration: 0.3, times: [0, 0.5, 1] }}
-        className="origin-left inline-block text-xl font-semibold tabular-nums text-text-strong whitespace-nowrap"
+        className={cn(
+          'origin-left inline-block text-xl font-semibold tabular-nums whitespace-nowrap',
+          emphasized ? 'text-white' : 'text-text-strong',
+        )}
       >
         {value}
       </motion.span>
-      <span className="text-xs text-text-weaker">{caption || ' '}</span>
+      <span
+        className={cn(
+          'text-sm font-semibold',
+          emphasized ? 'text-white/80' : 'text-text-strong',
+        )}
+      >
+        {label}
+      </span>
+      <span
+        className={cn(
+          'text-xs font-medium',
+          emphasized ? 'text-white/60' : 'text-text-weaker',
+        )}
+      >
+        {caption || ' '}
+      </span>
     </div>
   )
 }

@@ -25,8 +25,8 @@ export default function App() {
     <div className="min-h-screen bg-bg-primary font-sans">
       <Header onReset={handleReset} />
 
-      <section className="max-w-[1200px] mx-auto px-2xl py-2xl">
-        <div className="grid grid-cols-1 min-[960px]:grid-cols-[520px_1fr] gap-2xl items-start">
+      <section className="max-w-[1320px] mx-auto px-2xl py-2xl">
+        <div className="grid grid-cols-1 min-[960px]:grid-cols-[520px_1fr] gap-y-2xl gap-x-[80px] items-start">
           <ConfigPanel inputs={inputs} onChange={handleChange} />
           <ResultsPanel results={results} inputs={inputs} />
         </div>

@@ -31,7 +31,7 @@ export default function Slider({
       />
 
       {helper && (
-        <span className="text-sm tracking-[-0.4px] text-text-weaker">{helper}</span>
+        <span className="text-sm font-medium tracking-[-0.2px] text-text-weaker">{helper}</span>
       )}
     </div>
   )

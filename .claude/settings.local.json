@@ -5,7 +5,29 @@
       "Bash(npm install *)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(timeout 10 npm run dev)",
+      "Bash(npm run *)",
+      "Bash(npm uninstall *)",
+      "Bash(node *)",
+      "Bash(curl -s \"http://localhost:5173/src/components/ui/slider.jsx\")",
+      "Bash(git restore *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s \"http://localhost:5173/src/components/animate-ui/components/base/tabs.jsx\")",
+      "Bash(curl -s \"http://localhost:5173/\")",
+      "Bash(git revert *)",
+      "Bash(curl -s \"http://localhost:5173/src/components/ResultsPanel.jsx\")",
+      "mcp__plugin_figma_figma__get_metadata",
+      "mcp__plugin_figma_figma__use_figma",
+      "mcp__plugin_figma_figma__generate_figma_design",
+      "Bash(open *)",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(kill %1)",
+      "Bash(xargs -r kill)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --hide-scrollbars --window-size=1280,1800 --screenshot=/tmp/roi-check.png http://localhost:5173/)",
+      "Bash(git -C /Users/musharraf/Projects/ROI-freight remote -v)",
+      "Bash(git -C /Users/musharraf/Projects/ROI-freight branch --show-current)"
     ]
   }
 }

@@ -5,7 +5,7 @@ import MetricCard from './MetricCard'
 import BreakdownCard from './BreakdownCard'
 import SummaryFooter from './SummaryFooter'
 import AssumptionsDisclosure from './AssumptionsDisclosure'
-import { formatCurrency, formatHours } from '@/lib/calculations'
+import { formatCurrency } from '@/lib/calculations'
 
 function HeroRow({ children }) {
   return <div className="grid grid-cols-3 gap-lg">{children}</div>
@@ -27,9 +27,9 @@ function OperationsView({ results, inputs }) {
           caption="Monthly carrier overbilling that slips through"
         />
         <MetricCard
-          label="Hours your team gets back"
-          value={formatHours(results.hoursReturned)}
-          caption="Document handling + dispute time saved"
+          label="Monthly labor savings"
+          value={formatCurrency(results.totalLaborSaved)}
+          caption="Document handling + dispute labor saved"
         />
         <MetricCard
           emphasized
@@ -59,14 +59,13 @@ function OperationsView({ results, inputs }) {
           tag="cashflow"
           label="Cash freed up by faster POD collection"
           value={formatCurrency(results.cashFlowFreed)}
-          footnote="One-time working capital, not recurring"
         />
       </BreakdownGrid>
     </>
   )
 }
 
-function FinanceView({ results, inputs }) {
+function FinanceView({ results }) {
   return (
     <>
       <HeroRow>
@@ -136,14 +135,12 @@ export default function ResultsPanel({ results, inputs }) {
       {view === 'operations' ? (
         <OperationsView results={results} inputs={inputs} />
       ) : (
-        <FinanceView results={results} inputs={inputs} />
+        <FinanceView results={results} />
       )}
 
       <SummaryFooter
         paybackWeeks={results.paybackWeeks}
         roiMultiplier={results.roiMultiplier}
-        monthlyROI={results.monthlyROI}
-        subscriptionCost={inputs.subscriptionCost}
       />
 
         <AssumptionsDisclosure />

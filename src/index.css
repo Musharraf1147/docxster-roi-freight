@@ -28,14 +28,18 @@
   --color-stroke-strong: #7C737E;
 
   /* ── Colors: Tags ───────────────────────────────── */
-  --color-tag-margin-bg:    #FEF2F2;
-  --color-tag-margin-fg:    #B91C1C;
-  --color-tag-labor-bg:     #F0FDF4;
-  --color-tag-labor-fg:     #15803D;
-  --color-tag-disputes-bg:  #FFFBEB;
-  --color-tag-disputes-fg:  #B45309;
-  --color-tag-cashflow-bg:  #EFF6FF;
-  --color-tag-cashflow-fg:  #1D4ED8;
+  --color-tag-margin-bg:       #FEF2F2;
+  --color-tag-margin-fg:       #ED5656;
+  --color-tag-margin-stroke:   #FACDCD;
+  --color-tag-labor-bg:        #EBFAEF;
+  --color-tag-labor-fg:        #15803D;
+  --color-tag-labor-stroke:    #C2EFCE;
+  --color-tag-disputes-bg:     #FFF6EB;
+  --color-tag-disputes-fg:     #FA9E33;
+  --color-tag-disputes-stroke: #FEE2C2;
+  --color-tag-cashflow-bg:     #F5F5F5;
+  --color-tag-cashflow-fg:     #6F6F6F;
+  --color-tag-cashflow-stroke: #DAD7D7;
 
   /* ── Shadows ────────────────────────────────────── */
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.12);

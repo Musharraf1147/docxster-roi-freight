@@ -1,8 +1,14 @@
+import { docxsterLogoDataUrl } from '../assets/docxsterLogoDataUrl'
+
 export default function Header({ onReset }) {
   return (
-    <header className="sticky top-0 z-10 bg-bg-page border-b border-stroke-weak">
-      <div className="max-w-[1200px] mx-auto py-lg px-2xl flex items-center justify-between gap-xl">
-        <span className="text-base font-semibold text-text-strong">Docxster</span>
+    <header className="sticky top-0 z-50 bg-bg-page border-b border-stroke-weak">
+      <div className="max-w-[1320px] mx-auto py-lg px-2xl flex items-center justify-between gap-xl">
+        <img
+          src={docxsterLogoDataUrl}
+          alt="Docxster"
+          className="h-8 w-auto"
+        />
         <span className="text-sm text-text-weak">
           ROI Calculator for Freight Brokers
         </span>
