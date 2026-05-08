@@ -5,7 +5,7 @@ import { formatCurrency } from '@/lib/calculations'
 function Section({ title, children }) {
   return (
     <div className="flex flex-col gap-2xl py-[40px]">
-      <h3 className="text-[14px] font-semibold uppercase leading-[150%] tracking-[-0.2px] bg-[linear-gradient(-90deg,#FC9132_0%,#FA0136_49%,#B711C4_100%)] bg-clip-text text-transparent w-fit">
+      <h3 className="font-['Source_Code_Pro'] text-[14px] font-semibold uppercase leading-[150%] tracking-[-0.2px] bg-[linear-gradient(-90deg,#FC9132_0%,#FA0136_49%,#B711C4_100%)] bg-clip-text text-transparent w-fit">
         {title}
       </h3>
       {children}
@@ -18,7 +18,7 @@ export default function ConfigPanel({ inputs, onChange }) {
 
   return (
     <div className="flex flex-col section-dashed-divider">
-      <Section title="Your operation">
+      <Section title="Your operations">
         <Slider
           label="Monthly load volume"
           helper="Number of shipments booked each month"
